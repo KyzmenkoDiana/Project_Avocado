@@ -6,10 +6,10 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-/* Страница Джульетты */
+/* Страница Джульеты */
 router.get('/Juliet', function (req, res, next) {
   res.render('avocado', {
-    title: "Джульетта",
+    title: "Джульета",
     picture: "images/Juliet.jpg",
     desc: "Самая красивая и влюбчивая в семье. Любит модно одеваться и всегда радуется жизни. Забывает обо всем ветая в облаках."
   });
