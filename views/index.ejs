@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <title>
+<% layout('./layout/page.ejs') %>
+  <h1>
     <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <% layout('/layout/page.ejs') %>
-
-    <h1>
-      <%= title %>
-    </h1>
-    <p>Welcome to <%= title %>
-    </p>
-
-</body>
-
-</html>
+  </h1>
+  <p>Welcome to <%= title %>
+  </p>
