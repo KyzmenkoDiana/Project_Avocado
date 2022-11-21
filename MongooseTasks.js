@@ -1,15 +1,14 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/test')
+mongoose.connect('mongodb://localhost/test1')
+var Avocado = require("./models/Avocado.js").Avocado
 
-var schema = mongoose.Schema({ name: String })
 
-schema.methods.cric = function () {
-    console.log(this.get("name") + " сказала пчхи")
-}
-
-var Avocado = mongoose.model('Avocado', schema)
-
-var kitty = new Avocado({ name: 'Gabbi' })
-kitty.save(function (err) {
-    kitty.cric()
+var Avocado = new Avocado({
+    title: "Габби",
 })
+
+console.log(Avocado)
+Avocado.save(function () {
+    console.log(arguments)
+})
+
