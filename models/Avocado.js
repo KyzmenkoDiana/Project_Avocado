@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var avocadoSchema = new Schema({
+var AvocadoSchema = new Schema({
     title: String,
     nick: {
         type: String,
@@ -16,4 +16,4 @@ var avocadoSchema = new Schema({
         default: Date.now
     }
 })
-module.exports.Avocado = mongoose.model("Avocado", avocadoSchema)
+module.exports.Avocado = mongoose.model("Avocado", AvocadoSchema)
