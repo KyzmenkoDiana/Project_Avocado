@@ -7,6 +7,6 @@ var Avocado = new Avocado({
 })
 
 console.log(Avocado)
-cat.save(function (err, cat, affected) {
-    console.log(cat.title)
+Avocado.save(function (err, avocado, affected) {
+    console.log(Avocado.title)
 })
