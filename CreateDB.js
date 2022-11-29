@@ -9,8 +9,8 @@ async function run() {
         var database = client.db("ProjectAvocado");
         database.dropDatabase()
         database = client.db("ProjectAvocado");
-        const Avocado = database.collection("Avocado");
-        const result = await Avocado.insertMany(data);
+        const avocados = database.collection("avocados");
+        const result = await avocados.insertMany(data);
         console.log(`${result.insertedCount} documents were inserted`);
     } finally {
         await client.close();

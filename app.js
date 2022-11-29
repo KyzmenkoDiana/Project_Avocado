@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost/ProjectAvocado')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var Avocado = require('./routes/Avocado');
+var Avocado = require('./routes/avocado');
 
 var app = express();
 
