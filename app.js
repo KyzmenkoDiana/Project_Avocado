@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost/ProjectAvocado')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var Avocado = require('./routes/avocado');
+var avocado = require('./routes/avocado');
 
 var app = express();
 
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/Avocado', Avocado);
+app.use('/avocado', avocado);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

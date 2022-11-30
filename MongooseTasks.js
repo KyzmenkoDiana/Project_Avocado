@@ -1,9 +1,9 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/test1')
-var Avocado = require("./models/Avocado.js").Avocado
+var Avocado = require("../models/avocado").Avocado
 
 var Avocado = new Avocado({
-    title: "Габби",
+    title: "Джульетта",
 })
 
 console.log(Avocado)
