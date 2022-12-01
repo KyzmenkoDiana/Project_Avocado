@@ -20,13 +20,13 @@ router.get('/:nick', function (req, res, next) {
     ],
         function (err, result) {
             if (err) return next(err)
-            var Avocado = result[0]
+            var avocado = result[0]
             var avocados = result[1] || []
-            if (!Avocado) return next(new Error("Нет такого авокадо"))
-            res.render('Avocado', {
-                title: Avocado.title,
-                picture: Avocado.avatar,
-                desc: Avocado.desc,
+            if (!avocado) return next(new Error("Нет такого авокадо"))
+            res.render('avocado', {
+                title: avocado.title,
+                picture: avocado.avatar,
+                desc: avocado.desc,
                 menu: avocados
             });
         })
