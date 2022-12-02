@@ -10,26 +10,16 @@ router.get('/', function (req, res, next) {
 
 /* Страница Авокадо */
 router.get('/:nick', function (req, res, next) {
-    async.parallel([
-        function (callback) {
-            Avocado.findOne({ nick: req.params.nick }, callback)
-        },
-        function (callback) {
-            Avocado.find({}, { _id: 0, title: 1, nick: 1 }, callback)
-        }
-    ],
-        function (err, result) {
-            if (err) return next(err)
-            var avocado = result[0]
-            var avocados = result[1] || []
-            if (!avocado) return next(new Error("Нет такого авокадо"))
-            res.render('avocado', {
-                title: avocado.title,
-                picture: avocado.avatar,
-                desc: avocado.desc,
-                menu: avocados
-            });
+    Avocado.findOne({ nick: req.params.nick }, function (err, avocado) {
+        if (err) return next(err)
+        if (!avocado) return next(new Error("Нет такого авокадо"))
+        res.render('avocado', {
+            title: avocado.title,
+            picture: avocado.avatar,
+            desc: avocado.desc
         })
+    })
 })
+
 
 module.exports = router
