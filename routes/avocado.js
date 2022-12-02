@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var Avocado = require("../models/Avocado").Avocado
+var checkAuth = require("./../middleware/checkAuth.js")
 var async = require("async")
 
 /* GET users listing. */
@@ -9,7 +10,7 @@ router.get('/', function (req, res, next) {
 });
 
 /* Страница Авокадо */
-router.get('/:nick', function (req, res, next) {
+router.get('/:nick', checkAuth, function (req, res, next) {
     Avocado.findOne({ nick: req.params.nick }, function (err, avocado) {
         if (err) return next(err)
         if (!avocado) return next(new Error("Нет такого авокадо"))
